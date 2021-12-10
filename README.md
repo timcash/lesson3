@@ -6,7 +6,8 @@ npm install
 yarn install
 ```
 
-Fill out the `.env_example` with values from `pscale`
+Fill out the `.env_example` with values from `pscale`. See [lesson 1](https://github.com/timcash/database_lesson1) for more information on creating and saving a token.
+
 Change the name of `.env_example` to `.env.local`
 `.env.local` is already in the `.gitignore` file. Do not push this file to github because it has a token for the database in it.
 ```
