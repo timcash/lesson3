@@ -32,6 +32,8 @@ function EventsInDatabase() {
   )
 }
 
+// Lesson 3: Add a form to create a new event
+// Sends a new event to the database
 function CreateEvent() {
   const [title, setTitle] = useState('')
 
