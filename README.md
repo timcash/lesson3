@@ -2,21 +2,21 @@
 # Getting Started
 <sub><sup>forked from [timcash/lesson3](https://github.com/timcash/lesson3)
 
-- Install the dependencies:
+Install the dependencies:
 ```
 npm install
 #or
 yarn install
 ```
 
-- Change the name of `env_example` to `.env.local`.
+Change the name of `env_example` to `.env.local`.
 Do not push this file to github because it has a token for the database in it.
 `.env.local` is already in the `.gitignore` file. 
 ```
 mv env_example .env.local
 ```
 
-- Fill out and save the `.env_local` with values from `pscale` for each `''`:
+Fill out and save the `.env_local` with values from `pscale` for each `''`:
 ```
 export PLANETSCALE_TOKEN=''
 export PLANETSCALE_TOKEN_NAME=''
@@ -24,23 +24,23 @@ export PLANETSCALE_ORG=''
 export PLANETSCALE_DB=''
 ```
 
-- Next source the .env.local to your shell / terminal
+Next source the .env.local to your shell / terminal
 ```
 source .env.local
 ```
 
-- Verify the values are in your `env`
+Verify the values are in your `env`
 ```
 env | grep PLANET
 ```
 
-- Run the development server:
+Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
 ```
-* <sub> Restart server: `control+C` and `npm run dev` or `yarn dev`
+<sub> Restart server: `control+C` and `npm run dev` or `yarn dev`
 
 #
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -54,22 +54,22 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 ### Other various setups
 
-- MySQL: cleans table (ie. `events`): removes all rows with no date or date `IS NULL`
+MySQL: cleans table (ie. `events`): removes all rows with no date or date `IS NULL`
 ```
 DELETE FROM events WHERE created_at IS NULL;
 ```
 
-- Convert a **local directory** into a **repository**. In working directory run:
+Convert a **local directory** into a **repository**. In working directory run:
 ``` 
 git init 
 ```
 
-- Rename branch from master to main:
+Rename branch from master to main:
 ```
 git branch -m master main
 ```
 
-- Clone a repository. In working directory, clone repo:
+Clone a repository. In working directory, clone repo:
 ```
 git clone https://github.com/patree-code/database-lesson3.git
 ```
