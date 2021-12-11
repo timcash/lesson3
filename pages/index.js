@@ -15,7 +15,7 @@ function EventsInDatabase() {
   if (!data) return <div>loading...</div>
   return (<div className={styles.container}>
 
-    {data.map((event) => (
+    {data.map(event => (
       <div key={event.event_id} className={styles.event}>
         <div>
           {event.event_id}
@@ -24,7 +24,7 @@ function EventsInDatabase() {
           {event.title}
         </div>
         <div>
-          {event.created_at.split('T')[0]}
+          {event.created_at}
         </div>
       </div>
     ))}
@@ -37,7 +37,7 @@ function EventsInDatabase() {
 function CreateEvent() {
   const [title, setTitle] = useState('')
 
-  const [date, setDate] = useState('')
+  const [created_at, setCreated_at] = useState('')
   return (
     <div>
       <form onSubmit={(e) => {
@@ -49,14 +49,13 @@ function CreateEvent() {
           },
           body: JSON.stringify({
             title,
-
-            date
+            created_at
           })
         })
       }
       }>
         <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
-        <input type="text" value={date} onChange={(e) => setDate(e.target.value)} />
+        <input type="text" value={created_at} onChange={(e) => setCreated_at(e.target.value)} />
         <button type="submit">Create Event</button>
       </form>
     </div>
