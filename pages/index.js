@@ -62,6 +62,40 @@ function CreateEvent() {
   )
 }
 
+// Lesson 4: delete an entry from the database by id
+// Delete an event from the database
+function DeleteEvent(props) {
+  const [id, setId] = useState('')  // id of the event to delete
+  const [title, setTitle] = useState('')  // title of the event to delete
+  const [created_at, setCreated_at] = useState('')  // created_at of the event to delete
+
+
+  return (
+    <div> 
+      <form onSubmit={(e) => {
+        e.preventDefault()
+        fetch(`/api/events/${id}`, {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            title,
+            created_at
+          })
+        })
+      }
+      }>
+        <input type="text" value={id} onChange={(e) => setId(e.target.value)} />
+        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+        <input type="text" value={created_at} onChange={(e) => setCreated_at(e.target.value)} />
+        <button type="submit">Delete Event</button>
+      </form>
+    </div>
+  )
+}
+
+
 export default function Home() {
   return (
     <div className={styles.page}>
