@@ -40,9 +40,24 @@ npm run dev
 # or
 yarn dev
 ```
-<sub> Restart server: `control+C` and `npm run dev` or `yarn dev`
-
 #
+<sup> Restart server: <br> 
+```
+control+C
+```
+```
+source .env.local
+```
+```
+env | grep PLANET
+```
+```
+npm run dev 
+#or 
+yarn dev
+```
+#
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
@@ -51,13 +66,7 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 #
-
-### Other various setups
-
-MySQL: cleans table (ie. `events`): removes all rows with no date or date `IS NULL`
-```
-DELETE FROM events WHERE created_at IS NULL;
-```
+## Other various setups
 
 Convert a **local directory** into a **repository**. In working directory run:
 ``` 
@@ -73,5 +82,37 @@ Clone a repository. In working directory, clone repo:
 ```
 git clone https://github.com/patree-code/database-lesson3.git
 ```
+#
+## MySQL
+<sub> See [timcas/database_lesson1](https://github.com/timcash/database_lesson1/blob/master/main.sql) for more on creating tables
 
-## Next Section
+Connect to the database. Open a MySQL shell instance to the given database and branch:
+```
+pscale shell chromadb main
+```
+
+Remove rows with no date or date `IS NULL` from table:
+```
+DELETE FROM events WHERE created_at IS NULL;
+```
+
+```
+SHOW TABLE;
+```
+
+```
+SELECT * FROM events;
+```
+
+```
++----------+-----------------+------------+
+| event_id | title           | created_at |
++----------+-----------------+------------+
+|        2 | My Second Event | 2021-11-29 |
+|        3 | My Third Event  | 2021-11-29 |
+|        4 | My Fourth Event | 2021-11-29 |
+|        5 | My Fourth Event | 2021-11-29 |
+|        6 | My Fourth Event | 2021-11-29 |
+|        7 | My Fourth Event | 2021-11-29 |
++----------+-----------------+------------+
+```
