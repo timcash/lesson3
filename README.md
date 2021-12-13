@@ -142,3 +142,4 @@ INSERT INTO `events` (id, name, description) VALUES
 ```
 
 <sub> See [timcas/database_lesson1](https://github.com/timcash/database_lesson1/blob/master/main.sql) for more on databases
+#

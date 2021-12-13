@@ -2,6 +2,8 @@
 const { PSDB } = require('planetscale-node')
 const conn = new PSDB('main')
 
+// console.log(process.env.PLANETSCALE_TOKEN) // => 'my-secret-token'
+
 // SETUP CODE HERE
 
 // MAIN CODE
