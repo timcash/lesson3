@@ -84,7 +84,6 @@ git clone https://github.com/patree-code/database-lesson3.git
 ```
 #
 ## MySQL
-<sub> See [timcas/database_lesson1](https://github.com/timcash/database_lesson1/blob/master/main.sql) for more on creating tables
 
 Connect to the database. Open a MySQL shell instance to the given database and branch:
 ```
@@ -104,6 +103,7 @@ SHOW TABLE;
 SELECT * FROM events;
 ```
 
+Examples of table:
 ```
 +----------+-----------------+------------+
 | event_id | title           | created_at |
@@ -116,3 +116,29 @@ SELECT * FROM events;
 |        7 | My Fourth Event | 2021-11-29 |
 +----------+-----------------+------------+
 ```
+
+Creates a table
+```
+CREATE TABLE `events` (
+    `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `name` varchar(255),
+    `description` varchar(255),
+);
+```
+
+Deletes or creates a table from the database
+
+```
+mysql> drop database [database name];       -- deletes
+mysql> create database [database name];     -- creates
+```
+
+Adds values to table or creates rows
+```
+INSERT INTO `events` (id, name, description) VALUES
+(1, 'Event 1', 'Description 1'),
+(2, 'Event 2', 'Description 2'),
+(3, 'Event 3', 'Description 3');
+```
+
+<sub> See [timcas/database_lesson1](https://github.com/timcash/database_lesson1/blob/master/main.sql) for more on databases
